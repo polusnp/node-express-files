@@ -44,6 +44,9 @@ const userSchema = new Schema(
             required: true,
             default: false,
         },
+        avatarURL: {
+            type: String,
+        },
         phone: {
             type: String,
             validate: {

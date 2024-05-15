@@ -10,6 +10,8 @@ const { connectDataBase } = require('./src/dataBase/connectionMongoDb.cjs');
 const app = express();
 
 app.use(express.json());
+app.use(express.static(staticFilesDirectoryPath));
+
 app.use('/auth', authRouter);
 app.use('/users', usersRouter);
 app.use('/movies', moviesRouter);

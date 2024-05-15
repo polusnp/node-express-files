@@ -10,6 +10,9 @@ const statusCode = {
     SERVICE_UNAVAILABLE: 503,
 };
 
+const MAX_AVATAR_SIZE = 5 * 1024 * 1024;
+
 module.exports = {
     statusCode,
+    MAX_AVATAR_SIZE,
 };

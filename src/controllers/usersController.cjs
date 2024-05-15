@@ -8,6 +8,7 @@ const {
     addMovieToFavorite,
     getFavoriteMovies,
 } = require('../services/usersService.cjs');
+const { updateAvatar } = require('../services/avatarService.cjs');
 const { statusCode } = require('../helpers/constants.cjs');
 
 // CRUD & CURRENT USER CONTROLLER
@@ -118,6 +119,20 @@ const postFavoriteMovieHandler = async (req, res, next) => {
     }
 };
 
+// USER'S AVATAR OPTIONS
+
+const patchUserAvatarHandler = async (req, res, next) => {
+    try {
+        const id = req.user._id;
+        const avatar = req.user.avatarURL;
+        const avatarURL = await updateAvatar(id, req.file, avatar);
+
+        res.status(statusCode.CREATED).json({ avatarURL });
+    } catch (error) {
+        next(error);
+    }
+};
+
 module.exports = {
     getAllUsersHandler,
     getCurrentUserHandler,
@@ -127,4 +142,5 @@ module.exports = {
     deleteUserHandler,
     getFavoriteMoviesHandler,
     postFavoriteMovieHandler,
+    patchUserAvatarHandler,
 };

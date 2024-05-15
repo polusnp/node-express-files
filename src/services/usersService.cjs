@@ -7,7 +7,7 @@ const getUserData = async (email) => {
         const userData = await User.findOne({ email });
         return userData;
     } catch (error) {
-        return new Error(error.message);
+        throw error;
     }
 };
 
@@ -16,7 +16,7 @@ const getAllUsers = async () => {
         const users = await User.find();
         return users;
     } catch (error) {
-        return new Error(error.message);
+        throw error;
     }
 };
 
@@ -25,7 +25,7 @@ const getUserById = async (id) => {
         const user = await User.findById(id);
         return user;
     } catch (error) {
-        return new Error(error.message);
+        throw error;
     }
 };
 
@@ -34,7 +34,7 @@ const addNewUser = async (userData) => {
         const newUser = await User.create(userData);
         return newUser;
     } catch (error) {
-        return new Error(error.message);
+        throw error;
     }
 };
 
@@ -47,7 +47,7 @@ const updateUser = async (id, body) => {
         );
         return updatedUser;
     } catch (error) {
-        return new Error(error.message);
+        throw error;
     }
 };
 
@@ -56,7 +56,7 @@ const removeUser = async (id) => {
         const newUsersList = await User.findByIdAndDelete(id);
         return newUsersList;
     } catch (error) {
-        return new Error(error.message);
+        throw error;
     }
 };
 
@@ -70,7 +70,7 @@ const getFavoriteMovies = async (userId) => {
 
         return userMovies.favoriteMovies;
     } catch (error) {
-        return new Error(error.message);
+        throw error;
     }
 };
 
@@ -90,7 +90,7 @@ const addMovieToFavorite = async (userId, movieId) => {
 
         return updatedUser.favoriteMovies;
     } catch (error) {
-        return new Error(error.message);
+        throw error;
     }
 };
 
