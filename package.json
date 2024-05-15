@@ -5,7 +5,8 @@
     "main": "index.js",
     "scripts": {
         "start": "node index.cjs",
-        "dev": "nodemon index.cjs"
+        "dev": "nodemon index.cjs",
+        "test": "jest"
     },
     "keywords": [],
     "author": "Pavlo Nahurnyi",
@@ -22,6 +23,7 @@
     },
     "devDependencies": {
         "jest": "^29.7.0",
+        "node-mocks-http": "^1.14.1",
         "nodemon": "^3.1.0"
     }
 }
