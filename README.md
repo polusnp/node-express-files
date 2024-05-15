@@ -12,6 +12,7 @@ This repository contains the code for a project built using Express.js for the b
 -   Password reset functionality
 -   CRUD operations for users (Create, Read, Update, Delete)
 -   Fetching all movies and retrieving a single movie by ID
+-   User avatar upload functionality
 
 ## Requirements
 
@@ -25,6 +26,7 @@ This repository contains the code for a project built using Express.js for the b
 -   **MongoDB**: NoSQL database used for storing movie and user data.
 -   **Mongoose**: MongoDB object modeling tool for Node.js, used for schema validation and interaction with the MongoDB database.
 -   **Joi**: A powerful schema description language and data validator for JavaScript.
+-   **Multer**: Middleware for handling multipart/form-data, used for avatar upload functionality.
 -   **JSON**: A lightweight data interchange format used for representing data in API requests and responses.
 -   **Git**: A version control system used for tracking changes in the project's source code.
 -   **GitHub**: A platform for hosting Git repositories and collaborating on software development projects.
@@ -52,6 +54,7 @@ You can access the API endpoints using a tool like Postman or cURL. Here are som
 -   **Delete a user**: `DELETE /users/:id`
 -   **Get favorite movies of a user**: `GET /users/favorites`
 -   **Add a movie to user's favorites**: `POST /users/favorites/:movieId`
+-   **Upload user avatar**: `PATCH /users/avatars`
 
 ### Movie Management
 
@@ -85,6 +88,7 @@ You can access the API endpoints using a tool like Postman or cURL. Here are som
         -   authService.js
         -   moviesService.js
         -   userService.js
+    -   uploads/ (for storing user avatars)
 -   .env.example
 -   .gitignore
 -   package.json
