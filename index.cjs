@@ -7,6 +7,11 @@ const handleNotFound = require('./src/errorHandlers/notFoundErrorHandler.cjs');
 const handleGlobalErrors = require('./src/errorHandlers/globalErrorHandler.cjs');
 const { connectDataBase } = require('./src/dataBase/connectionMongoDb.cjs');
 const { staticFilesDirectoryPath } = require('./src/helpers/avatarFolder.cjs');
+const {
+    creatFolderIsNotExist,
+    tempAvatarFolder,
+    avatarFolder,
+} = require('./src/helpers/avatarFolder.cjs');
 
 const app = express();
 
@@ -29,6 +34,8 @@ const port = process.env.PORT || 3000;
 const connectToMongoDB = async () => {
     try {
         await connectDataBase();
+        await creatFolderIsNotExist(tempAvatarFolder);
+        await creatFolderIsNotExist(avatarFolder);
         app.listen(port, () => console.log(`Server running on port ${port}`));
     } catch (error) {
         console.log(error);

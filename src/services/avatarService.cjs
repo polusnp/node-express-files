@@ -16,6 +16,8 @@ const saveUserAvatar = async (file) => {
     return path.join(process.env.AVATARS_FOLDER, newAvatar).replace('\\', '/');
 };
 
+//
+
 const updateAvatar = async (userId, file, avatar) => {
     try {
         const avatarURL = await saveUserAvatar(file, avatar);
