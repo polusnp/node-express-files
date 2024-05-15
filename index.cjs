@@ -6,6 +6,7 @@ require('dotenv').config();
 const handleNotFound = require('./src/errorHandlers/notFoundErrorHandler.cjs');
 const handleGlobalErrors = require('./src/errorHandlers/globalErrorHandler.cjs');
 const { connectDataBase } = require('./src/dataBase/connectionMongoDb.cjs');
+const { staticFilesDirectoryPath } = require('./src/helpers/avatarFolder.cjs');
 
 const app = express();
 

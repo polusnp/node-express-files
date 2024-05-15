@@ -2,6 +2,8 @@ const fs = require('fs/promises');
 const path = require('path');
 require('dotenv').config();
 
+const staticFilesDirectoryPath = path.join(__dirname, '../../public');
+
 const tempAvatarFolder = path.join(process.cwd(), process.env.UPLOAD_DIR);
 
 const avatarFolder = path.join(
@@ -26,4 +28,5 @@ module.exports = {
     tempAvatarFolder,
     avatarFolder,
     creatFolderIsNotExist,
+    staticFilesDirectoryPath,
 };

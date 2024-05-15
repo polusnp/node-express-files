@@ -16,6 +16,7 @@ const {
     deleteUserHandler,
     getFavoriteMoviesHandler,
     postFavoriteMovieHandler,
+    patchUserAvatarHandler,
 } = require('../controllers/usersController.cjs');
 
 // FAVORITE USER'S MOVIES
